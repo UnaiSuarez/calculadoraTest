@@ -1,3 +1,5 @@
+import Clases.Jugador;
+import DAO.DAOFactory;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,5 +32,12 @@ public class CalculadoraTest {
         int resultado = c.dividir(8,2);
         int resultadoEsperado = 4;
         assertEquals(resultadoEsperado, resultado);
+    }
+
+    @Test
+    public void Jugador(){
+        Jugador jugador = DAOFactory.getInstance().getDaoJugador().jugador();
+        Jugador jugadorEsperado = new Jugador("unai","unai","unai",22090);
+        assertEquals(jugadorEsperado.getNombre(),jugador.getNombre());
     }
 }
